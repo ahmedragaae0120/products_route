@@ -17,6 +17,8 @@ import '../../Data/data_source_impl/remote/product_data_source_impl.dart'
 import '../../Data/repository_impl/product_repo_impl.dart' as _i7;
 import '../../Domain/repository_contract/product_repository.dart' as _i6;
 import '../../Domain/use_cases/products_usecase.dart' as _i8;
+import '../../presentation/layouts/products_screen/view_model/product_view_model_cubit.dart'
+    as _i9;
 import '../api/api_manager.dart' as _i3;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -37,6 +39,8 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i7.ProductRepoImpl(gh<_i4.ProductDatasource>()));
     gh.factory<_i8.ProductsUsecase>(
         () => _i8.ProductsUsecase(gh<_i6.ProductRepo>()));
+    gh.factory<_i9.ProductViewModelCubit>(
+        () => _i9.ProductViewModelCubit(gh<_i8.ProductsUsecase>()));
     return this;
   }
 }
