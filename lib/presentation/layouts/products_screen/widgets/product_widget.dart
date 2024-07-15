@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:products_route/Domain/entities/productEntinty.dart';
 
@@ -41,7 +40,7 @@ class ProductWidget extends StatelessWidget {
                               child: CircularProgressIndicator.adaptive()),
                     )),
                 Container(
-                  padding:  REdgeInsets.all(6),
+                  padding: const EdgeInsets.all(6),
                   child:
                       SvgPicture.asset("assets/images/whishlistSelected.svg"),
                 ),
@@ -50,7 +49,7 @@ class ProductWidget extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: REdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -58,8 +57,10 @@ class ProductWidget extends StatelessWidget {
                     child: Text(
                       product.title ?? "",
                       maxLines: 1,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontSize: 16.sp, fontWeight: FontWeight.w400),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .copyWith(fontSize: 16, fontWeight: FontWeight.w400),
                     ),
                   ),
                   Expanded(
@@ -67,11 +68,13 @@ class ProductWidget extends StatelessWidget {
                       product.description ?? "",
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontSize: 16.sp, fontWeight: FontWeight.w400),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium!
+                          .copyWith(fontSize: 16, fontWeight: FontWeight.w400),
                     ),
                   ),
-                  SizedBox(height: 8.h),
+                  const SizedBox(height: 8),
                   Expanded(
                     child: Row(
                       children: [
@@ -81,9 +84,9 @@ class ProductWidget extends StatelessWidget {
                               .textTheme
                               .bodyMedium!
                               .copyWith(
-                                  fontSize: 16.sp, fontWeight: FontWeight.w400),
+                                  fontSize: 16, fontWeight: FontWeight.w400),
                         ),
-                        SizedBox(width: 15.w),
+                        const SizedBox(width: 15),
                         Expanded(
                           child: Text(
                             "${product.price} EGP",
@@ -96,7 +99,7 @@ class ProductWidget extends StatelessWidget {
                                             .colorScheme
                                             .primary
                                             .withOpacity(0.6),
-                                    fontSize: 14.sp,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     decoration: TextDecoration.lineThrough,
                                     decorationColor: Theme.of(context)
@@ -118,10 +121,10 @@ class ProductWidget extends StatelessWidget {
                               .textTheme
                               .bodyMedium!
                               .copyWith(
-                                  fontSize: 16.sp, fontWeight: FontWeight.w400),
+                                  fontSize: 16, fontWeight: FontWeight.w400),
                         ),
-                        SizedBox(
-                          width: 5.w,
+                        const SizedBox(
+                          width: 5,
                         ),
                         SvgPicture.asset("assets/images/Vector.svg"),
                         const Spacer(),

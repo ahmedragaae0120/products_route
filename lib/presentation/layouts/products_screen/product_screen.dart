@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:products_route/core/Di/di.dart';
 import 'package:products_route/core/Utils/assets_manager.dart';
 import 'package:products_route/presentation/layouts/products_screen/view_model/product_view_model_cubit.dart';
@@ -24,26 +23,28 @@ class _ProductScreenState extends State<ProductScreen> {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         scrolledUnderElevation: 0,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              AssetsManager.routeLogo,
-            ),
-            SizedBox(height: 19.h),
-            Row(
-              children: [
-                const Expanded(child: SearchBarWidget()),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.shopping_cart_outlined,
-                      size: 30.sp,
-                      color: Theme.of(context).colorScheme.primary,
-                    )),
-              ],
-            ),
-          ],
+        title: Flexible(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                AssetsManager.routeLogo,
+              ),
+              const SizedBox(height: 19),
+              Row(
+                children: [
+                  const Expanded(child: SearchBarWidget()),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.shopping_cart_outlined,
+                        size: 30,
+                        color: Theme.of(context).colorScheme.primary,
+                      )),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       body: BlocProvider(
@@ -60,13 +61,13 @@ class _ProductScreenState extends State<ProductScreen> {
           builder: (context, state) {
             if (state is ProductSuccessState) {
               return Padding(
-                padding: REdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 15.w,
-                    mainAxisSpacing: 10.h,
-                    mainAxisExtent: 250.h,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 10,
+                    mainAxisExtent: 250,
                   ),
                   itemBuilder: (context, index) =>
                       ProductWidget(product: state.products[index]),
@@ -75,7 +76,7 @@ class _ProductScreenState extends State<ProductScreen> {
               );
             }
             if (state is ProductErrorState) {
-              return Text(state.error);
+              return Center(child: Text(state.error));
             }
             return const Center(child: CircularProgressIndicator.adaptive());
           },

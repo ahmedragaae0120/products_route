@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:products_route/core/Utils/assets_manager.dart';
 
 class SearchBarWidget extends StatelessWidget {
@@ -7,8 +6,7 @@ class SearchBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50.h,
+    return IntrinsicWidth(
       child: TextField(
         decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -27,7 +25,7 @@ class SearchBarWidget extends StatelessWidget {
           hintStyle: Theme.of(context).textTheme.bodySmall,
           prefixIcon: Icon(
             Icons.search_rounded,
-            size: 30.sp,
+            size: 30,
             textDirection: TextDirection.ltr,
             color: Theme.of(context).colorScheme.primary,
           ),

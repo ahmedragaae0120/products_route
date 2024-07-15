@@ -13,9 +13,10 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: LightTheme.lightTheme,
         themeMode: ThemeMode.light,
-        home:  ProductScreen(),
+        home: const ProductScreen(),
       ),
     );
   }

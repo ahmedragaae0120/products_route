@@ -8,6 +8,6 @@ import 'package:products_route/my_app.dart';
 void main() {
   Bloc.observer = MyBlocObserver();
   ApiManager.init();
-  configureDependencies();
+  configureDependencies()f
   runApp(const MyApp());
 }
