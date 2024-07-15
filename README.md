@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is part of a job application task where I implemented a product listing feature using the Route API with Dio package, following the Clean Architecture principles. The goal of this project is to demonstrate my ability to interact with APIs and build a well-structured, maintainable application using advanced software design patterns.
+This project is part of a job application task where I implemented a product listing feature using the Route API with Dio package, following the Clean Architecture principles. The goal of this project is to demonstrate my ability to interact with APIs and build a well-structured, maintainable application using State management solution using the BLoC pattern.
 
 ## Requirements
 
