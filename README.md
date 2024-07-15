@@ -1,16 +1,30 @@
-# products_route
+# Product Listing using Route API and Dio
 
-A new Flutter project.
+## Introduction
 
-## Getting Started
+This project is part of a job application task where I implemented a product listing feature using the Route API with Dio package, following the Clean Architecture principles. The goal of this project is to demonstrate my ability to interact with APIs and build a well-structured, maintainable application using advanced software design patterns.
 
-This project is a starting point for a Flutter application.
+## Requirements
 
-A few resources to get you started if this is your first Flutter project:
+- [Flutter](https://flutter.dev/docs/get-started/install)
+- [Dio](https://pub.dev/packages/dio)
+- Route API credentials
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Architecture
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The project is organized using Clean Architecture to ensure a clear separation of concerns and improve maintainability and testability. The project consists of the following layers:
+
+- **Presentation Layer:** Contains the screens and widgets, relying on ViewModels to update the UI.
+- **Domain Layer:** Contains the entities and use cases.
+- **Data Layer:** Contains the implementation of repositories and data sources to interact with the API.
+
+## Instructions
+
+### Installing Requirements
+
+1. Ensure that Flutter and Dart are installed on your machine.
+2. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/ahmedragaae0120/products_route.git
+   cd product-listing
