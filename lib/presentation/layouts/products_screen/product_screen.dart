@@ -63,11 +63,11 @@ class _ProductScreenState extends State<ProductScreen> {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: GridView.builder(
+                  physics: const BouncingScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 15,
                     mainAxisSpacing: 10,
-                    mainAxisExtent: 250,
                   ),
                   itemBuilder: (context, index) =>
                       ProductWidget(product: state.products[index]),

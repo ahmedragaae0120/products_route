@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:products_route/config/style/text_style.dart';
 
 class LightTheme {
@@ -10,10 +10,9 @@ class LightTheme {
       onPrimary: Colors.white,
     ),
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: AppBarTheme(toolbarHeight: 113.w),
+    appBarTheme: const AppBarTheme(toolbarHeight: 113),
     textTheme: TextTheme(
         bodyMedium: TextsStyle.titlesStyle,
-        bodySmall:TextsStyle.descriptionStyle),
+        bodySmall: TextsStyle.descriptionStyle),
   );
 }
-
